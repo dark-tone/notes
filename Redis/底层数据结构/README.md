@@ -135,7 +135,7 @@ typedef struct dictEntry {
 **自动扩展：**
 1. 服务器没有在执行BGSAVE命令或BGREWRITEAOF命令，并且负载因子>=1
 2. 服务器正在执行BGSAVE或BGREWRITEAOF命令，并且负载因子>=5
-（负载因子 = 哈希表已保存节点数量used / 哈希表大小size）
+（负载因子 = 哈希表已保存节点数量used / 哈希表大小size）<br>
 **自动收缩：**<br>
 负载因子 <= 0.1
 
