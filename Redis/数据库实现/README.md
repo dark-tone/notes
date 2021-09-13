@@ -10,7 +10,7 @@ redisDb结构的expires字典保存了数据库中所有键的过期时间,我�
 2. 过期字典的值是一个long long类型的整数，这个整数保存了键所指向的数据库键的过期时间-一个毫秒精度的UNIX时间戳。
 
 **带过期字典的数据库示例图：**<br>
-<img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/9-6.png" width="670" height="426"/>
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/9-6.jpg" width="670" height="426"/>
 
 
 #### 过期键的判断
