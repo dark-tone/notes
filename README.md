@@ -19,6 +19,12 @@
     - [HTTP2](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/HTTP2)
     - [短连接与长连接](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/%E7%9F%AD%E8%BF%9E%E6%8E%A5%E4%B8%8E%E9%95%BF%E8%BF%9E%E6%8E%A5)
 
+### MySQL
+- [基础架构](https://github.com/dark-tone/notes/tree/main/MySQL/%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84)
+- [日志模块](https://github.com/dark-tone/notes/tree/main/MySQL/%E6%97%A5%E5%BF%97%E6%A8%A1%E5%9D%97)
+- [事务隔离级别](https://github.com/dark-tone/notes/tree/main/MySQL/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB)
+- [索引](https://github.com/dark-tone/notes/tree/main/MySQL/%E7%B4%A2%E5%BC%95)
+
 ### GoLang
 - [环境变量](https://github.com/dark-tone/notes/tree/main/Golang/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
 - [基础数据类型](https://github.com/dark-tone/notes/tree/main/Golang/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
