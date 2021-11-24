@@ -15,6 +15,7 @@
     - [TCP三次握手四次挥手](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B)
     - [TCPIP网络分层模型](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/TCPIP%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B)
     - [输入网址到显示页面发生了什么](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/%E8%BE%93%E5%85%A5%E7%BD%91%E5%9D%80%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88)
+    - [DNS](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/DNS)
     - [HTTPS](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/HTTPS)
     - [HTTP2](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/HTTP2)
     - [短连接与长连接](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/%E7%9F%AD%E8%BF%9E%E6%8E%A5%E4%B8%8E%E9%95%BF%E8%BF%9E%E6%8E%A5)
