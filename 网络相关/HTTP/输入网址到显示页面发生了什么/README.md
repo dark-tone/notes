@@ -1,8 +1,10 @@
 # 输入网址到显示页面发生了什么
-1. 你向浏览器的地址栏输入一个域名，如http://www.baidu.com
+1. 你向浏览器的地址栏输入一个域名回车，如http://www.baidu.com
 2. 发起域名解析过程，获取真实IP地址。
+    > localDNS或httpDNS
 3. 拿到ip地址之后，发起TCP 握手(3次)。
 4. 握手成功，构造request,即 HTTP 中request请求.并发送到目的地。
+    > 中间涉及局域网ARP协议获取网关MAC地址，以及路由规则，TCP流量控制及拥塞控制知识。
 5. 服务器接受到一个完整的request(该边界的指定一般是conten-length,chunked也有),根据用户的request内容运算出相应的response。
 6. 服务器将response 沿着request建立的连接，向浏览器(客户端)发送数据。
 7. keepalive的时候不关闭该连接，没有keepalive的时候发起tcp close,4次握手

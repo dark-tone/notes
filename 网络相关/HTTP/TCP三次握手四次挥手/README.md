@@ -38,6 +38,10 @@ A--确认-->B<br>
 中间两次可以一起返回，所以是三次
 2. 防止失效的连接请求报文段被服务端接收，从而产生错误。
 
+### 作用
+- 各自确认对方的存在。
+- 约定初始的数据包的序列号。
+
 ## 四次挥手
 ### 示意图
 <img src="https://raw.githubusercontent.com/dark-tone/notes/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/imgs/3.jpg" weight="676" height="416">
