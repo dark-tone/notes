@@ -20,6 +20,8 @@
     - [短连接与长连接](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP/%E7%9F%AD%E8%BF%9E%E6%8E%A5%E4%B8%8E%E9%95%BF%E8%BF%9E%E6%8E%A5)
 - [UDP](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/UDP)
 - [DNS和HTTPDNS](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/DNS%E4%B8%8EHTTPDNS)
+- [ICMP](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/ICMP)
+- [MQTT](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/MQTT)
 
 ### MySQL
 - [基础架构](https://github.com/dark-tone/notes/tree/main/MySQL/%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84)
