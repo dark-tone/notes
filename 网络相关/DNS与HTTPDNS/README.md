@@ -55,9 +55,23 @@ HTTPDNS在递归解析实现上优化了与权威DNS的交互，通过edns-clien
 ## 2.3 接入
 目前阿里云以及腾讯云均有相关的HTTPDNS解析服务提供。
 
+# 3 DNS负载均衡配置
+以腾讯云的DNS解析界面为例，可以设置不同地区、不同运营商等条件下解析到的服务器地址。比如可以设置江苏地区的用户解析到江苏业务服的ip，广西用户则解析到广西附件的业务服ip等。
+
+## 3.1 简单的负载均衡
+直接在域名解析界面，为相同的域名配置不同的服务器ip即可（A记录）。
+> 缺点：由DNS解析来实现负载均衡，不可控，同时负载均衡效果不理想，而且在一台业务服务器出问题后，由于DNS有缓存机制，即便更改了域名解析记录也无法立即生效。
+
+## 3.2 利用nginx
+可以使用cname，将域名解析的ip指向自身的nginx服务器，再利用nginx实现自身的负载均衡策略。
+>**我们已经有了一个域名了，为什么还要设置cname呢？**<br>
+>假设有www.domain.com和mail.domain.com，其cname都指向host.domain.cdnxxx.com。然后某一天，我们的服务器地址(A记录对应的IP地址)可能要变了。由于www和mail都会被引导到www.domain.wscdn.com，所以这时我们只需修改host.domain.wscdn.com的A记录，而不必把www和mail的A记录都改一遍。因此cname增加了灵活性，在子域多的时候更为明显，相当于进行了批量管理。
+
 # 参考资料
 [移动互联网时代，如何优化你的网络 —— 域名解析篇](https://developer.aliyun.com/article/58967)
 
 [网络优化之HttpDNS域名解析](https://www.jianshu.com/p/f82bec845712)
 
 [HTTPDNS原理](https://zhuanlan.zhihu.com/p/270596378)
+
+[GSLB相关知识点](https://blog.csdn.net/dahuang1016/article/details/105928932)
