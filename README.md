@@ -8,6 +8,7 @@
 - [哨兵模式](https://github.com/dark-tone/notes/tree/main/Redis/%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F)
 - [实现分布式锁](https://github.com/dark-tone/notes/tree/main/Redis/%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81)
 - [Redis为什么这么快](https://github.com/dark-tone/notes/tree/main/Redis/Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BF%AB)
+- [缓存一致性解决方案](https://github.com/dark-tone/notes/tree/main/Redis/缓存一致性解决方案)
 
 ### 网络相关
 - [HTTP](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP)
