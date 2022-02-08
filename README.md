@@ -32,6 +32,7 @@
 - [索引](https://github.com/dark-tone/notes/tree/main/MySQL/%E7%B4%A2%E5%BC%95)
 - [排序原理](https://github.com/dark-tone/notes/tree/main/MySQL/%E6%8E%92%E5%BA%8F%E5%8E%9F%E7%90%86)
 - [in和join和exists](https://github.com/dark-tone/notes/tree/main/MySQL/in%E5%92%8Cjoin%E5%92%8Cexists)
+- [主从复制](https://github.com/dark-tone/notes/tree/main/MySQL/主从复制)
 
 ### GoLang
 - [环境变量](https://github.com/dark-tone/notes/tree/main/Golang/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
