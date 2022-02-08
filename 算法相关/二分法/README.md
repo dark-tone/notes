@@ -4,6 +4,18 @@
 ## 时间复杂度
 O(log(n))
 
+## 二分法两种写法
+大家写二分法经常写乱，主要是因为对区间的定义没有想清楚，区间的定义就是不变量。要在二分查找的过程中，保持不变量，就是在while寻找中每一次边界的处理都要坚持根据区间的定义来操作，这就是循环不变量规则。
+
+写二分法，区间的定义一般为两种，左闭右闭即[left, right]，或者左闭右开即[left, right)。
+### 左闭右闭
+- while (left <= right) 要使用 <= ，因为left == right是有意义的，所以使用 <=
+- if (nums[middle] > target) right 要赋值为 middle - 1，因为当前这个nums[middle]一定不是target，那么接下来要查找的左区间结束下标位置就是 middle - 1
+
+### 左闭右开
+- while (left < right)，这里使用 < ,因为left == right在区间[left, right)是没有意义的
+- if (nums[middle] > target) right 更新为 middle，因为当前nums[middle]不等于target，去左区间继续寻找，而寻找区间是左闭右开区间，所以right更新为middle，即：下一个查询区间不会去比较nums[middle]
+
 ## 模板
 ```
 ...
@@ -21,6 +33,7 @@ left, right := 0, len(data) - 1
     }
   }
 ```
+
 ## 问题1：数字在升序数组中出现的次数
 #### 简要描述
 给定一个长度为 n 的非降序数组和一个非负数整数 k ，要求统计 k 在数组中出现的次数
@@ -44,3 +57,6 @@ left, right := 0, len(data) - 1
 
 ## 问题3：0～n-1中缺失的数字
 （略）
+
+## 参考资料
+[二分法](https://programmercarl.com/0704.%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.html)
