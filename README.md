@@ -60,3 +60,4 @@
 - [常见排序算法](https://github.com/dark-tone/notes/tree/main/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95)
 - [二叉树遍历](https://github.com/dark-tone/notes/tree/main/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/二叉树遍历)
 - [洗牌算法](https://github.com/dark-tone/notes/tree/main/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/洗牌算法)
+- [限流算法](https://github.com/dark-tone/notes/tree/main/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/限流算法)
