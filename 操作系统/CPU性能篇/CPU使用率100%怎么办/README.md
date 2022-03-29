@@ -51,3 +51,6 @@ Overhead  Shared Object       Symbol
 perf top 虽然实时展示了系统的性能信息，但它的缺点是并不保存数据，也就无法用于离线或者后续的分析。而 perf record 则提供了保存数据的功能，保存后的数据，需要你用 perf report 解析展示。
 
 在实际使用中，我们还经常为 perf top 和 perf record 加上 **-g** 参数，开启调用关系的采样，方便我们根据调用链来分析性能问题。
+
+# 参考
+《Linux性能优化实战》
