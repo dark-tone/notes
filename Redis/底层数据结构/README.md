@@ -16,7 +16,7 @@ struct sdshdr{
 ```
 **示例图：**
 
-<img src="/dark-tone/notes/blob/main/Redis/imgs/1.png?raw=true" alt="" width="532" height="220"/>
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/1.png" alt="" width="532" height="220"/>
 
 SDS遵循C字符串以空字符结尾的惯例，保存空字符的1字节空间不计算在SDS的len属性里面，分配空字符串空间以及添加到末尾的操作均为SDS函数自动完成的。遵循这一惯例的好处是：SDS可以直接重用一部分C字符串函数库里面的函数。
 
