@@ -1,5 +1,5 @@
 # TCP相关流程图
-<img src="https://raw.githubusercontent.com/dark-tone/notes/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/imgs/12.jpg">
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/imgs/12.jpg" width="500px">
 
 # 相关函数
 ## socket
