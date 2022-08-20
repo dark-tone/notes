@@ -6,7 +6,7 @@ TCP每发送一个数据，都需要进行一次应答。当收到了上一个�
   为了解决这个问题，TCP引入了窗口概念。即在接收窗口范围内的数据，无需等待确认，可以继续发送窗口内数据，直到把发送窗口数据传输完毕。
   窗口的实现实际上是在操作系统开辟一个缓存空间（空间和序号都是有限的，并且要循环使用，一般为环形队列），发送主机在等到确认应答返回之前，必须在缓冲区保留已发送窗口的数据（超时重传）。收到应答后，将此数据清除。
 
-<img src="https://raw.githubusercontent.com/dark-tone/notes/main/网络相关/TCP/imgs/1.jpg" weight="562">
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/网络相关/TCP/imgs/1.jpg" width="562">
 
 # 拥塞控制
 所谓拥塞控制就是防止过多的数据注入到网络中，这样可以使网络中的路由器或链路不致过载。
