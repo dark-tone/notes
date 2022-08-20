@@ -1,9 +1,12 @@
 # 流量控制
 所谓流量控制就是让发送方的发送速率不要太快，要让接收方来得及接收。
 
-<img src="https://raw.githubusercontent.com/dark-tone/notes/main/网络相关/TCP/imgs/1.jpg">
-
 ## 滑动窗口（rwnd）
+TCP每发送一个数据，都需要进行一次应答。当收到了上一个应答，在发下一个数据，但这种方式效率比较低。数据包往返时间越长，通信的效率就越低。
+  为了解决这个问题，TCP引入了窗口概念。即在接收窗口范围内的数据，无需等待确认，可以继续发送窗口内数据，直到把发送窗口数据传输完毕。
+  窗口的实现实际上是在操作系统开辟一个缓存空间（空间和序号都是有限的，并且要循环使用，一般为环形队列），发送主机在等到确认应答返回之前，必须在缓冲区保留已发送窗口的数据（超时重传）。收到应答后，将此数据清除。
+
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/网络相关/TCP/imgs/1.jpg" weight="562">
 
 # 拥塞控制
 所谓拥塞控制就是防止过多的数据注入到网络中，这样可以使网络中的路由器或链路不致过载。
@@ -51,3 +54,5 @@
 [TCP的流量控制](https://blog.csdn.net/ZBraveHeart/article/details/123820768)
 
 [详解TCP拥塞控制](https://blog.csdn.net/qq_46312987/article/details/124061775)
+
+[TCP滑动窗口](https://blog.csdn.net/ZBraveHeart/article/details/123691305)
