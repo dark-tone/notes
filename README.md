@@ -81,7 +81,7 @@
     - [平均负载](https://github.com/dark-tone/notes/tree/main/操作系统/CPU性能篇/平均负载)
     - [CPU上下文切换](https://github.com/dark-tone/notes/tree/main/操作系统/CPU性能篇/CPU上下文切换)
     - [中断](https://github.com/dark-tone/notes/tree/main/操作系统/CPU性能篇/中断)
-    - [CPU使用率100%怎么办](https://github.com/dark-tone/notes/tree/main/操作系统/CPU性能篇/CPU使用率100%怎么办)
+    - [CPU使用率100%怎么办](https://github.com/dark-tone/notes/tree/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E6%80%A7%E8%83%BD%E7%AF%87/CPU%E4%BD%BF%E7%94%A8%E7%8E%87100%25%E6%80%8E%E4%B9%88%E5%8A%9E)
     - [CPU性能分析总结](https://github.com/dark-tone/notes/tree/main/操作系统/CPU性能篇/CPU性能分析总结)
 - [内存性能篇](https://github.com/dark-tone/notes/tree/main/操作系统/内存性能篇)
     - [Linux内存是怎么工作的](https://github.com/dark-tone/notes/tree/main/操作系统/内存性能篇/Linux内存是怎么工作的)
