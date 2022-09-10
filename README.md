@@ -49,15 +49,20 @@
 - [复合数据类型](https://github.com/dark-tone/notes/tree/main/Golang/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
 - [函数和方法](https://github.com/dark-tone/notes/tree/main/Golang/%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B9%E6%B3%95)
 - [接口](https://github.com/dark-tone/notes/tree/main/Golang/%E6%8E%A5%E5%8F%A3)
-- [Channel](https://github.com/dark-tone/notes/tree/main/Golang/Channel)
+- [常用库](https://github.com/dark-tone/notes/tree/main/Golang/常用库)
+- [常用命令](https://github.com/dark-tone/notes/tree/main/Golang/常用命令)
+- [Channel基础](https://github.com/dark-tone/notes/tree/main/Golang/Channel基础)
+- [Channel底层实现](https://github.com/dark-tone/notes/tree/main/Golang/Channel底层实现)
 - [Goroutine](https://github.com/dark-tone/notes/tree/main/Golang/Goroutine)
 - [并发安全和锁](https://github.com/dark-tone/notes/tree/main/Golang/%E5%B9%B6%E5%8F%91%E5%AE%89%E5%85%A8%E5%92%8C%E9%94%81)
 - [内存模型](https://github.com/dark-tone/notes/tree/main/Golang/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B)
 - [GC机制](https://github.com/dark-tone/notes/tree/main/Golang/GC%E6%9C%BA%E5%88%B6)
 - [pprof](https://github.com/dark-tone/notes/tree/main/Golang/pprof)
-- [gin框架](https://github.com/dark-tone/notes/tree/main/Golang/gin%E6%A1%86%E6%9E%B6)
-    - [参数校验](https://github.com/dark-tone/notes/tree/main/Golang/gin%E6%A1%86%E6%9E%B6/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C)
-    - [中间件](https://github.com/dark-tone/notes/tree/main/Golang/gin%E6%A1%86%E6%9E%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6)
+- [内存泄漏的避免与检测](https://github.com/dark-tone/notes/tree/main/Golang/内存泄漏的避免与检测)
+
+### gin框架
+- [参数校验](https://github.com/dark-tone/notes/tree/main/gin框架/gin%E6%A1%86%E6%9E%B6/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C)
+- [中间件](https://github.com/dark-tone/notes/tree/main/gin框架/gin%E6%A1%86%E6%9E%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6)
 
 ### k8s
 - [环境安装](https://github.com/dark-tone/notes/tree/main/k8s/环境安装)

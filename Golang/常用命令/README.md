@@ -30,3 +30,12 @@ go get package[@version]
 
 # go run
 编译并运行程序。
+
+# go vet
+检查 Go 源代码并报告可疑的情况
+
+# go tool compile -S
+输出对应代码的汇编代码
+``` go
+go tool compile -S xxx.go > xxx.s
+```

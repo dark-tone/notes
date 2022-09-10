@@ -7,14 +7,17 @@ go f() // create a new goroutine that calls f(); don't wait
 ```
 一个goroutine必定对应一个函数，可以创建多个goroutine去执行相同的函数。
 
+## GM模型
+早期调度器只有一个全局队列，多个m从同一个全局队列竞争g，造成激烈的**锁竞争**。新创建的g被放入全局队列导致被其他m执行，破坏了局部性。
+
 ## GPM模型
 在 Go 语言中，每一个 goroutine 是一个独立的执行单元，相较于每个 OS 线程固定分配 2M 内存的模式，goroutine 的栈采取了动态扩容方式， 初始时仅为2KB，随着任务执行按需增长，最大可达 1GB（64 位机器最大是 1G，32 位机器最大是 256M），且完全由 golang 自己的调度器 Go Scheduler 来调度。此外，GC 还会周期性地将不再使用的内存回收，收缩栈空间。 因此，Go 程序可以同时并发成千上万个 goroutine 是得益于它强劲的调度器和高效的内存模型。
 
 <img src="https://raw.githubusercontent.com/dark-tone/notes/main/Golang/imgs/1.png" weight="568" height="449">
 
-- G: 表示 Goroutine，每个 Goroutine 对应一个 G 结构体，G 存储 Goroutine 的运行堆栈、状态以及任务函数，可重用。G 并非执行体，每个 G 需要绑定到 P 才能被调度执行。
+- G: 表示 Goroutine，每个 Goroutine 对应一个 G 结构体，G 存储 Goroutine 的运行堆栈、状态以及任务函数，可重用。G 并非执行体，每个 G 需要绑定到 P 才能被调度执行。每个结构体G中有一个sched的属性就是用来保存它上下文的。这样，goroutine 就可以很轻易的来回切换。
 - P: Processor，表示逻辑处理器， 对 G 来说，P 相当于 CPU 核，G 只有绑定到 P(在 P 的 local runq 中)才能被调度。对 M 来说，P 提供了相关的执行环境(Context)，如内存分配状态(mcache)，任务队列(G)等，P 的数量决定了系统内最大可并行的 G 的数量（前提：物理 CPU 核数 >= P 的数量），P 的数量由用户设置的 GOMAXPROCS 决定，但是不论 GOMAXPROCS 设置为多大，P 的数量最大为 256。
-- M: Machine，OS 线程抽象，代表着真正执行计算的资源，在绑定有效的 P 后，进入 schedule 循环；而 schedule 循环的机制大致是从 Global 队列、P 的 Local 队列以及 wait 队列中获取 G，切换到 G 的执行栈上并执行 G 的函数，调用 goexit 做清理工作并回到 M，如此反复。M 并不保留 G 状态，这是 G 可以跨 M 调度的基础，M 的数量是不定的，由 Go Runtime 调整，为了防止创建过多 OS 线程导致系统调度不过来，目前默认最大限制为 10000 个。
+- M: Machine，OS 线程抽象，代表着真正执行计算的资源，在绑定有效的 P 后，进入 schedule 循环；而 schedule 循环的机制大致是从 Global 队列、P 的 Local 队列以及 wait 队列中获取 G，切换到 G 的执行栈上并执行 G 的函数，调用 goexit 做清理工作并回到 M，如此反复。M 并不保留 G 状态，这是 G 可以跨 M 调度的基础，M 的数量是不定的，由 Go Runtime 调整，为了防止创建过多 OS 线程导致系统调度不过来，目前默认最大限制为 10000 个。m结构体对象主要记录着工作线程的诸如栈的起止位置、当前正在执行的goroutine以及是否空闲等等状态信息之外，还通过指针维持着与p结构体的实例对象之间的绑定关系。
 
 每个 P 维护一个 G 的本地队列；<br>
 当一个 G 被创建出来，或者变为可执行状态时，就把他放到 P 的本地可执行队列中，如果满了则放入Global；<br>
@@ -22,6 +25,12 @@ go f() // create a new goroutine that calls f(); don't wait
 
 ### 调度过程
 当通过 go 关键字创建一个新的 goroutine 的时候，它会优先被放入 P 的本地队列。为了运行 goroutine，M 需要持有（绑定）一个 P，接着 M 会启动一个 OS 线程，循环从 P 的本地队列里取出一个 goroutine 并执行。执行调度算法：当 M 执行完了当前 P 的 Local 队列里的所有 G 后，它会先尝试从 Global 队列寻找 G 来执行，如果 Global 队列为空，它会随机挑选另外一个 P，从它的队列里中**拿走一半**的 G 到自己的队列中执行。
+
+### 调度策略
+#### 发生系统调用
+1. 正在执行的G发生系统调用时，P和M分离，从休眠的M队列唤醒一个M，或者创建一个新的M，接管当前M的P和P队列。
+2. 退出系统调用或阻塞结束，M尝试抢占原先的P，抢占失败，尝试从空闲P队列获取P，如果都没有，G会被放入全局队列，M会被放入休眠队列（长期休眠等待GC回收销毁）。
+
 
 ### GOMAXPROCS
 Go运行时的调度器使用GOMAXPROCS参数来确定需要使用多少个OS线程来同时执行Go代码。默认值是机器上的CPU核心数。Go语言中可以通过runtime.GOMAXPROCS()函数设置当前程序并发时占用的CPU逻辑核心数。
@@ -33,3 +42,11 @@ Go运行时的调度器使用GOMAXPROCS参数来确定需要使用多少个OS线
 [GoLang GPM模型](https://studygolang.com/articles/29227?fr=sidebar)
 
 [Go语言基础之并发](https://www.liwenzhou.com/posts/Go/14_concurrence/)
+
+[GPM](https://mp.weixin.qq.com/s/hTgIyJN7p-wrDfLj1bP1wQ)
+
+[GPM](https://blog.csdn.net/dream_1996/article/details/118051217)
+
+[也谈goroutine调度器](https://tonybai.com/2017/06/23/an-intro-about-goroutine-scheduler/)
+
+[go GMP调度原理](https://blog.csdn.net/weixin_41565755/article/details/122443114)
