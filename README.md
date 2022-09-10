@@ -61,8 +61,8 @@
 - [内存泄漏的避免与检测](https://github.com/dark-tone/notes/tree/main/Golang/内存泄漏的避免与检测)
 
 ### gin框架
-- [参数校验](https://github.com/dark-tone/notes/tree/main/gin框架/gin%E6%A1%86%E6%9E%B6/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C)
-- [中间件](https://github.com/dark-tone/notes/tree/main/gin框架/gin%E6%A1%86%E6%9E%B6/%E4%B8%AD%E9%97%B4%E4%BB%B6)
+- [参数校验](https://github.com/dark-tone/notes/tree/main/gin框架/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C)
+- [中间件](https://github.com/dark-tone/notes/tree/main/gin框架/%E4%B8%AD%E9%97%B4%E4%BB%B6)
 
 ### k8s
 - [环境安装](https://github.com/dark-tone/notes/tree/main/k8s/环境安装)
