@@ -4,6 +4,8 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struc
 ```
 select 函数监视的文件描述符分3类，分别是writefds、readfds、和exceptfds。调用后select函数会阻塞，直到有描述符就绪（有数据 可读、可写、或者有except），或者超时（timeout指定等待时间，如果立即返回设为null即可），函数返回。当select函数返回后，可以通过**遍历fdset**，来找到就绪的描述符。
 
+return：表示此时有多少个监控的描述符就绪，若超时则为0，出错为-1。
+
 
 # poll
 ``` C
@@ -57,6 +59,12 @@ while(1){
 - select和poll每次调用函数需要将监控的fds从用户空间拷贝到内核空间，epoll则不用
 - select和poll有事件时，还需要遍历文件符
 
+# 文件描述符fd
+文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。
+
+文件描述符在形式上是一个**非负整数**。实际上，它是一个索引值，指向**内核为每一个进程所维护的该进程打开文件的记录表**。当程序打开一个现有文件或者创建一个新文件时，内核向进程返回一个文件描述符。在程序设计中，一些涉及底层的程序编写往往会围绕着文件描述符展开。但是文件描述符这一概念往往只适用于UNIX、Linux这样的操作系统。
+
 # 参考资料
 [Linux IO模式及 select、poll、epoll详解](https://segmentfault.com/a/1190000003063859)
+
 [epoll的LT和ET](https://www.jianshu.com/p/d3442ff24ba6)
