@@ -103,6 +103,9 @@
 
 ### 分布式
 - [分布式事务](https://github.com/dark-tone/notes/tree/main/分布式/分布式事务)
+- [一致性算法](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法)
+    - [Raft](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法/Raft)
+    - [ZAB](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法/ZAB)
 
 ### 安全
 - [CSRF](https://github.com/dark-tone/notes/tree/main/%E5%AE%89%E5%85%A8/CSRF)
