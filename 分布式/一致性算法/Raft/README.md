@@ -5,7 +5,7 @@
 
 Follower只响应其他服务器的请求。如果Follower超时没有收到Leader的消息，它会成为一个Candidate并且开始一次Leader选举。收到大多数服务器投票的Candidate会成为新的Leader。Leader在宕机之前会一直保持Leader的状态。
 
-<img src="https://raw.githubusercontent.com/dark-tone/notes/main/分布式/imgs/4.png"><br>
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/分布式/imgs/4.png" width="700"><br>
 Raft算法将时间分为一个个的**任期（term）**，每一个term的开始都是Leader选举。在成功选举Leader之后，Leader会在整个term内管理整个集群。如果Leader选举失败，该term就会因为没有Leader而结束。
 
 # Leader选举
@@ -16,11 +16,11 @@ Follower将其当前term加一然后转换为Candidate。它首先给自己投�
 - 收到了Leader的消息，表示有其它服务器已经抢先当选了Leader；
 - 没有服务器赢得多数的选票，Leader选举失败，等待选举时间超时后发起下一次选举。
 
-<img src="https://raw.githubusercontent.com/dark-tone/notes/main/分布式/imgs/5.jpg"><br>
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/分布式/imgs/5.jpg"  width="700"><br>
 选举出Leader后，Leader通过定期向所有Followers发送心跳信息维持其统治。若Follower一段时间未收到Leader的心跳则认为Leader可能已经挂了，再次发起Leader选举过程。
 
 # 日志同步
-<img src="https://raw.githubusercontent.com/dark-tone/notes/main/分布式/imgs/6.jpg"><br>
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/分布式/imgs/6.jpg"  width="700"><br>
 1. Client发送command给Leader
 2. Leader追加command至本地log
 3. Leader广播AppendEntriesRPC至Follower
