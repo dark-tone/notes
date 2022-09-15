@@ -107,7 +107,7 @@
 - [一致性算法](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法)
     - [Raft](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法/Raft)
     - [ZAB](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法/ZAB)
-
+- [CAS](https://github.com/dark-tone/notes/tree/main/分布式/CAS)
 ### 安全
 - [CSRF](https://github.com/dark-tone/notes/tree/main/%E5%AE%89%E5%85%A8/CSRF)
 - [XSS](https://github.com/dark-tone/notes/tree/main/%E5%AE%89%E5%85%A8/XSS)
