@@ -63,7 +63,7 @@ type mapextra struct {
 1. 使用 key 和哈希表的 hash0, 做哈希函数运算得到哈希值。
 2. 根据B值得知哈希桶数量，取余得出对应的哈希桶位置。
 3. 基于哈希值的高 8 位与桶中的 topbits 依次比较, 若相等便可以根据 topbits 所在的相对位置计算出 key 所在的相对位置, 进一步比较 key 是否相等, 若 key 相等则此次查找过程结束, 返回对应位置上 elem, 若 key 不相等, 则继续往下比较 topbits, 若当前桶中的所有 topbits 均与此次要找到的元素的 key 的哈希值的高 8 位不相等, 则继续沿着 overflow 向后探查溢出桶, 重复刚刚的过程, 直到找到对应的 elem, 或遍历完所有的溢出桶仍未找到目标元素, 此时返回该类型的零值。
-
+ 
 # 扩容
 触发条件：
 - 装载因子过大，即键值对太多了。（loadFactory=element.Length/hashTable.length）
