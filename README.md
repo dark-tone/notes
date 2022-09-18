@@ -44,14 +44,15 @@
 - [onlineDDL](https://github.com/dark-tone/notes/tree/main/MySQL/onlineDDL)
 
 ### GoLang
-- [环境变量](https://github.com/dark-tone/notes/tree/main/Golang/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
-- [基础数据类型](https://github.com/dark-tone/notes/tree/main/Golang/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
-- [复合数据类型](https://github.com/dark-tone/notes/tree/main/Golang/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
-- [函数和方法](https://github.com/dark-tone/notes/tree/main/Golang/%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B9%E6%B3%95)
-- [接口](https://github.com/dark-tone/notes/tree/main/Golang/%E6%8E%A5%E5%8F%A3)
+- [基础](https://github.com/dark-tone/notes/tree/main/Golang/基础)
+    - [环境变量](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
+    - [基础数据类型](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+    - [复合数据类型](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+    - [函数和方法](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B9%E6%B3%95)
+    - [接口](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E6%8E%A5%E5%8F%A3)
+    - [常用命令](https://github.com/dark-tone/notes/tree/main/Golang/基础/常用命令)
+    - [Channel基础](https://github.com/dark-tone/notes/tree/main/Golang/基础/Channel基础)
 - [常用库](https://github.com/dark-tone/notes/tree/main/Golang/常用库)
-- [常用命令](https://github.com/dark-tone/notes/tree/main/Golang/常用命令)
-- [Channel基础](https://github.com/dark-tone/notes/tree/main/Golang/Channel基础)
 - [Channel底层实现](https://github.com/dark-tone/notes/tree/main/Golang/Channel底层实现)
 - [map底层实现](https://github.com/dark-tone/notes/tree/main/Golang/map底层实现)
 - [sync.Map底层实现](https://github.com/dark-tone/notes/tree/main/Golang/sync.Map底层实现)
@@ -61,6 +62,7 @@
 - [GC机制](https://github.com/dark-tone/notes/tree/main/Golang/GC%E6%9C%BA%E5%88%B6)
 - [pprof](https://github.com/dark-tone/notes/tree/main/Golang/pprof)
 - [内存泄漏的避免与检测](https://github.com/dark-tone/notes/tree/main/Golang/内存泄漏的避免与检测)
+- [内存对齐与unsafe.Pointer](https://github.com/dark-tone/notes/tree/main/Golang/内存对齐与unsafe.Pointer)
 
 ### gin框架
 - [参数校验](https://github.com/dark-tone/notes/tree/main/gin框架/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C)
