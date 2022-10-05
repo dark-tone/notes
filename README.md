@@ -56,13 +56,14 @@
 - [Channel底层实现](https://github.com/dark-tone/notes/tree/main/Golang/Channel底层实现)
 - [map底层实现](https://github.com/dark-tone/notes/tree/main/Golang/map底层实现)
 - [sync.Map底层实现](https://github.com/dark-tone/notes/tree/main/Golang/sync.Map底层实现)
-- [Goroutine](https://github.com/dark-tone/notes/tree/main/Golang/Goroutine)
+- [GMP调度](https://github.com/dark-tone/notes/tree/main/Golang/GMP调度)
 - [并发安全和锁](https://github.com/dark-tone/notes/tree/main/Golang/%E5%B9%B6%E5%8F%91%E5%AE%89%E5%85%A8%E5%92%8C%E9%94%81)
 - [内存模型](https://github.com/dark-tone/notes/tree/main/Golang/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B)
 - [GC机制](https://github.com/dark-tone/notes/tree/main/Golang/GC%E6%9C%BA%E5%88%B6)
 - [pprof](https://github.com/dark-tone/notes/tree/main/Golang/pprof)
 - [内存泄漏的避免与检测](https://github.com/dark-tone/notes/tree/main/Golang/内存泄漏的避免与检测)
 - [内存对齐与unsafe.Pointer](https://github.com/dark-tone/notes/tree/main/Golang/内存对齐与unsafe.Pointer)
+- [内存逃逸](https://github.com/dark-tone/notes/tree/main/Golang/内存逃逸)
 
 ### gin框架
 - [参数校验](https://github.com/dark-tone/notes/tree/main/gin框架/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C)

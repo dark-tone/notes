@@ -34,6 +34,10 @@ go get package[@version]
 # go vet
 检查 Go 源代码并报告可疑的情况
 
+# go test
+用于运行测试用例<br>
+**-cover**： 同时输出代码覆盖率
+
 # go tool compile -S
 输出对应代码的汇编代码
 ``` go
