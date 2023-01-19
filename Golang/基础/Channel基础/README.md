@@ -59,6 +59,15 @@ select{
 }
 ```
 
+## 关闭chan的原则
+**除非必须关闭 chan，否则不要主动关闭。**
+
+当一个 chan 没有 sender 和 receiver 时，即不再被使用时，GC 会在一段时间后标记、清理掉这个 chan。那么什么时候必须关闭 chan 呢？比较常见的是将 close 作为一种通知机制，尤其是生产者与消费者之间是 1:M 的关系时，通过 close 告诉下游：我收工了，你们别读了。
+
+关闭的原则：
+1. Don't close a channel from the receiver side 不要在消费者端关闭 chan
+2. Don't close a channel if the channel has multiple concurrent senders 有多个并发写的生产者时也别关
+
 # 参考文章
 《Go语言圣经》
 
