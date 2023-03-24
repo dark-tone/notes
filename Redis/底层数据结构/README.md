@@ -16,7 +16,7 @@ struct sdshdr{
 ```
 **示例图：**
 
-<img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/1.png" alt="" width="532" height="220"/>
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/sds.jpg" width="532" height="220"/>
 
 SDS遵循C字符串以空字符结尾的惯例，保存空字符的1字节空间不计算在SDS的len属性里面，分配空字符串空间以及添加到末尾的操作均为SDS函数自动完成的。遵循这一惯例的好处是：SDS可以直接重用一部分C字符串函数库里面的函数。
 
@@ -68,7 +68,7 @@ typedef struct listNode {
 }
 ```
 **示例图：**
-<img src="http://www.gtnote.xyz/wp-content/uploads/2021/09/QQ截图20210909074216.jpg" alt="" width="660" height="219" class="alignnone size-full wp-image-54" />
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/list.jpg" alt="" width="660" height="219" class="alignnone size-full wp-image-54" />
 
 
 # 字典
@@ -116,7 +116,7 @@ typedef struct dictEntry {
 } dictEntry;
 ```
 **示意图：**<br>
-<img src="http://www.gtnote.xyz/wp-content/uploads/2021/09/QQ截图20210910065428-1024x550.jpg" alt="" width="720" height="387" class="alignnone size-large wp-image-59" />
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/hash.jpg" alt="" width="720" height="387" />
 
 ### 哈希算法
 当把新的键值对添加进字典时，会根据键值对的键计算出哈希值和索引值，然后根据索引值，将包含新键值对的哈希表节点放到哈希表数组的指定索引上面。（算法：MurmurHash）
@@ -187,6 +187,7 @@ typedef struct zskiplistNode {
 
 同一跳表节点保存的对象必须唯一，但多个节点保存的分值可以相同，分值相同的按照成员在字典序中的大小来进行排序。
 
+跳表的查找是自顶向下查找的，如果发现当前元素的下一个元素大于要查找的值，就从下一层开始继续查找，直到找到当前元素或发现元素不存在。
 
 # 整数集合
 ### 概览
@@ -214,8 +215,11 @@ typedef struct intset {
 2. 将原所有元素进行类型转换。
 3. 将新元素添加至数组里面。
 
-升级之后的元素，只会大于或小于当前的所有元素，当小于时会放置在数组最前面，反之则放最后面。<br>
-整数集合不支持降级操作。
+升级之后的元素，只会大于或小于当前的所有元素，当小于时会放置在数组最前面，反之则放最后面。
+
+整数集合的底层实现为数组，这个数组以**有序、无重复**的方式保存集合元素。
+
+**整数集合不支持降级操作。**
 
 
 # 压缩列表
