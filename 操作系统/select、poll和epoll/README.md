@@ -28,8 +28,9 @@ int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event)；
 int epoll_wait(int epfd, struct epoll_event * events, int maxevents, int timeout);
 ```
 
+## 示意图
 红黑树，链表
-
+<img src="https://raw.githubusercontent.com/dark-tone/notes/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/imgs/640.png">
 
 ```
 int s = socket(AF_INET, SOCK_STREAM, 0);    
@@ -68,3 +69,5 @@ while(1){
 [Linux IO模式及 select、poll、epoll详解](https://segmentfault.com/a/1190000003063859)
 
 [epoll的LT和ET](https://www.jianshu.com/p/d3442ff24ba6)
+
+[深入理解 Linux 的 epoll 机制](https://mp.weixin.qq.com/s?__biz=MzU0OTE4MzYzMw==&mid=2247515011&idx=2&sn=3812f80dd80bb27340d5849df8d1cec0&chksm=fbb1327dccc6bb6bfd5ab7f9da23220ade44e88e2f8d2506b7e0868bb84665a95f026eddb82d&scene=27)
