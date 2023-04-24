@@ -25,5 +25,25 @@ redisDb结构的expires字典保存了数据库中所有键的过期时间,我�
 在这三种策略中,第一种和第三种为主动删除策略,而第二种则为被动删除策略。<br>
 Redis服务器使用的是惰性删除和定期删除两种策略配合。
 
+## 内存淘汰策略
+配置文件redis.conf中可设置redis可使用的内存大小以及内存淘汰策略，当内存不足时会根据设置的内存淘汰策略删除数据。
+
+- volatile-lru 利用LRU算法移除设置过过期时间的key (LRU:最近使用 Least Recently Used ) 。
+
+- allkeys-lru 利用LRU算法移除任何key （和上一个相比，删除的key包括设置过期时间和不设置过期时间的）。通常使用该方式。
+
+- volatile-random 移除设置过过期时间的随机key 。
+
+- allkeys-random 无差别的随机移除。
+
+- volatile-ttl 移除即将过期的key(minor TTL)
+
+- noeviction 不移除任何key，只是返回一个写错误 ，默认选项，一般不会选用。
+
 ## 数据库通知（键空间通知）
 （略）
+
+# 参考资料
+《Redis设计与实现》
+
+[Redis详解（十一）------ 过期删除策略和内存淘汰策略](https://zhuanlan.zhihu.com/p/148584952)

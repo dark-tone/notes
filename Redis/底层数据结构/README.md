@@ -68,6 +68,7 @@ typedef struct listNode {
 }
 ```
 **示例图：**
+
 <img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/list.jpg" alt="" width="660" height="219" class="alignnone size-full wp-image-54" />
 
 
@@ -115,7 +116,8 @@ typedef struct dictEntry {
 	struct dictEntry *next;
 } dictEntry;
 ```
-**示意图：**<br>
+**示意图：**
+
 <img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/hash.jpg" alt="" width="720" height="387" />
 
 ### 哈希算法
@@ -185,7 +187,7 @@ typedef struct zskiplistNode {
 **示例图：**<br>
 <img src="https://raw.githubusercontent.com/dark-tone/notes/main/Redis/imgs/4-1.jpg" height="273" weight="701">
 
-同一跳表节点保存的对象必须唯一，但多个节点保存的分值可以相同，分值相同的按照成员在字典序中的大小来进行排序。
+同一跳表节点保存的对象**必须唯一**，但多个节点保存的分值可以相同，分值相同的按照成员在字典序中的大小来进行排序。
 
 跳表的查找是自顶向下查找的，如果发现当前元素的下一个元素大于要查找的值，就从下一层开始继续查找，直到找到当前元素或发现元素不存在。
 
