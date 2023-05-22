@@ -67,8 +67,25 @@ A收到释放请求后，向B发送确认应答，此时A进入TIME-WAIT状态�
 
 这就是为什么我们主动关闭服务端后，用客户端向服务端写数据，还必须是写两次后连接才会关闭的原因。
 
+### 短时间内大量TIME_WAIT出现的根本原因：高并发且持续的短连接
+- 业务上使用了持续且大量的短连接，纯属设计缺陷，例如爬虫服务器就有可能出现这样的问题
+- http请求中connection的值被设置成close，因为服务器处理完http请求后会主动断开连接，然后这个连接就处于TIME_WAIT状态了。持续时间长且量级较大的话，问题就显现出来了。http洗衣1.0中，connection默认为close，但在http1.1中connection默认行为是keep-alive，就是因为这个原因
+- 服务器被攻击了，攻击方采用了大量的短连接
+> 解决办法：
+>1. 代码层修改，把短连接改为长连接，但代价较大
+>2. 修改 ip_local_port_range，增大可用端口范围，比如1024 ~ 65535
+>3. 客户端程序中设置socket的 SO_LINGER 选项
+>4. 打开 tcp_tw_recycle 和tcp_timestamps 选项，有一定风险，且linux4.12之后被废弃
+>5. 打开 tcp_tw_reuse 和 tcp_timestamps 选项
+>6. 设置 tcp_max_tw_buckets 为一个较小的值
 
-# 参考文章
+###  client fooling
+client走完第三步就发送请求，但server还没有调用accept，这种情况叫client fooling。
+会发生的情况：client认为连接建立成功，但是server上这个连接实际没有ready，所以server没有回复，一段时间后client认为丢包了然后重传这个包，一直到超时，client主动发fin包断开该连接。
+
+# 参考资料
 [TCP/IP--理解TCP三次握手和四次挥手](https://www.jianshu.com/p/4084a9397138)
 
 [TCP 为什么是三次握手，而不是两次或四次？ - 大闲人柴毛毛的回答 - 知乎](https://www.zhihu.com/question/24853633/answer/254224088)
+
+[彻底理解并解决服务器出现大量TIME_WAIT](https://zhuanlan.zhihu.com/p/567088021)
