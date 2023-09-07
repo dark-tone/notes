@@ -105,12 +105,20 @@
 - [网络性能篇](https://github.com/dark-tone/notes/tree/main/操作系统/网络性能篇)
     - [C10K与C1000K](https://github.com/dark-tone/notes/tree/main/操作系统/网络性能篇/C10K与C1000K)
 
+### 开发工具
+- [Charles](https://github.com/dark-tone/notes/tree/main/常用开发工具/Charles)
+- [Git](https://github.com/dark-tone/notes/tree/main/常用开发工具/Git)
+
 ### 分布式
 - [分布式事务](https://github.com/dark-tone/notes/tree/main/分布式/分布式事务)
 - [一致性算法](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法)
     - [Raft](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法/Raft)
     - [ZAB](https://github.com/dark-tone/notes/tree/main/分布式/一致性算法/ZAB)
 - [CAS](https://github.com/dark-tone/notes/tree/main/分布式/CAS)
+
+### 高并发
+- [防止订单重复提交](https://github.com/dark-tone/notes/tree/main/高并发/防止订单重复提交)
+
 ### 安全
 - [CSRF](https://github.com/dark-tone/notes/tree/main/%E5%AE%89%E5%85%A8/CSRF)
 - [XSS](https://github.com/dark-tone/notes/tree/main/%E5%AE%89%E5%85%A8/XSS)
