@@ -11,6 +11,7 @@
 - [Redis为什么这么快](https://github.com/dark-tone/notes/tree/main/Redis/Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BF%AB)
 - [缓存一致性解决方案](https://github.com/dark-tone/notes/tree/main/Redis/缓存一致性解决方案)
 - [脑裂](https://github.com/dark-tone/notes/tree/main/Redis/脑裂)
+- [原子性相关](https://github.com/dark-tone/notes/tree/main/Redis/原子性相关)
 
 ### 网络相关
 - [HTTP](https://github.com/dark-tone/notes/tree/main/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/HTTP)
@@ -48,6 +49,7 @@
     - [环境变量](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
     - [基础数据类型](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
     - [复合数据类型](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+    - [值类型与引用类型](https://github.com/dark-tone/notes/tree/main/Golang/基础/值类型与引用类型)
     - [函数和方法](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B9%E6%B3%95)
     - [接口](https://github.com/dark-tone/notes/tree/main/Golang/基础/%E6%8E%A5%E5%8F%A3)
     - [常用命令](https://github.com/dark-tone/notes/tree/main/Golang/基础/常用命令)

@@ -85,6 +85,9 @@ Read View就是事务进行快照读操作的时候生产的读视图(Read View)
 上面的读已提交一个事务中的每次查询都会重新生成一个新的 readView ，而可重复读在第一次生成 readView 之后的所有查询都共用同一个 readView 。<br>
 也就是说可重复读只会在第一次 select 时候生成一个 readView ，所以一个事务里面不论有几次 select ，其实看到的都是同一个 readView 。
 
+### 如何降低加锁时间
+当我们在编写一个事务的时候，加行锁的操作应在不影响业务的情况下，尽可能地靠近 commit 语句，这样单行记录的行锁时间才会更短，TPS 会更高。
+
 # 参考文章
 《MySQL实战45讲》
 
@@ -93,3 +96,5 @@ Read View就是事务进行快照读操作的时候生产的读视图(Read View)
 [一个 MVCC 和面试官大战 30 回合](https://zhuanlan.zhihu.com/p/383842414)
 
 [正确的理解MySQL的MVCC及实现原理](https://blog.csdn.net/SnailMann/article/details/94724197)
+
+[大促场景下库存更新 SQL 优化](https://juejin.cn/post/7266302333634215976)
