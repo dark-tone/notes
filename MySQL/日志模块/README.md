@@ -2,7 +2,7 @@
 ## redo log
 InnoDB引擎特有的日志。
 
-当有一条记录需要更新的时候，InnoDB 引擎就会先把记录写到 redo log里面，并更新内存，这个时候更新就算完成了。同时，InnoDB 引擎会在适当的时候，将这个操作记录更新到磁盘里面。
+当有一条记录需要更新的时候，InnoDB 引擎就会先把记录写到 redo log里面，并更新内存，这个时候更新就算完成了。同时，InnoDB 引擎会在适当的时候，将这个操作记录更新到磁盘里面（checkpoint刷新脏页）。
 
 redo log是固定大小的，比如可以配置为一组 4 个文件，每个文件的大小是 1GB，那么这块“粉板”总共就可以记录 4GB 的操作。从头开始写，写到末尾就又回到开头循环写，如下面这个图所示。<br>
 <img src="https://raw.githubusercontent.com/dark-tone/notes/main/MySQL/imgs/2.png" weight="468" height="351">
