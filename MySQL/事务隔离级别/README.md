@@ -31,6 +31,7 @@ RR级别依然可能发生幻读，比如有两个事务A与B。
 2. 事务B使用insert插入数据。
 3. 事务A使用update更新数据。
 4. 事务A再查询，此时会发现事务B之前插入的数据。
+> 原因：RR级别下ReadView的生成时机是在事务中的第一次查询，事务结束前该ReadView复用。但是如果事务中进行了当前读的操作（如update)，后续再查询就会重新生成ReadView。也就是说update操作产生了当前读，那当前读肯定可以读到事务2已经提了的数据，然后全部更新后再去读就又会产生一个readview，很明显之前的update操作对于这个readview是可见的，所以数据的条数就跟之前的不一样了。
 
 解决办法是事务A的首次查询，使用select ... for update，此时即可使用当前读来锁住需要更新的行。
 
@@ -90,6 +91,8 @@ Read View就是事务进行快照读操作的时候生产的读视图(Read View)
 
 # 参考文章
 《MySQL实战45讲》
+
+[MySQL的RR级别解决幻读问题了吗](https://juejin.cn/post/7134186501306318856)
 
 [Innodb中的事务隔离级别和锁的关系](https://tech.meituan.com/2014/08/20/innodb-lock.html)
 
