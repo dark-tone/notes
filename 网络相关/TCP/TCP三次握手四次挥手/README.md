@@ -76,8 +76,11 @@ A收到释放请求后，向B发送确认应答，此时A进入TIME-WAIT状态�
 >2. 修改 ip_local_port_range，增大可用端口范围，比如1024 ~ 65535
 >3. 客户端程序中设置socket的 SO_LINGER 选项
 >4. 打开 tcp_tw_recycle 和tcp_timestamps 选项，有一定风险，且linux4.12之后被废弃
->5. 打开 tcp_tw_reuse 和 tcp_timestamps 选项
+>5. 打开 tcp_tw_reuse 和 tcp_timestamps 选项(tcp_tw_reuse选项和tcp_timestamps必须同时打开；否则tcp_tw_reuse就不起作用)
 >6. 设置 tcp_max_tw_buckets 为一个较小的值
+
+### tcp_tw_reuse 和 SO_REUSEADDR
+关于tcp_tw_reuse和SO_REUSEADDR的区别，可以概括为：tcp_tw_reuse是为了缩短time_wait的时间，避免出现大量的time_wait链接而占用系统资源，解决的是accept后的问题；SO_REUSEADDR是为了解决time_wait状态带来的端口占用问题，以及支持同一个port对应多个ip，解决的是bind时的问题。
 
 ###  client fooling
 client走完第三步就发送请求，但server还没有调用accept，这种情况叫client fooling。
