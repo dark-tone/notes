@@ -60,6 +60,13 @@ func main() {
 ## list [func name]
 查看匹配的函数具体每一行的CPU或内存等占用数据。
 
+## 示例
+1. 调用http://xxxxx/debug/pprof/heap获取dump文件，存放路径假设：/download/heap
+2. 命令行输入 <code>go tool pprof /download/heap</code> 进入pprof模式
+3. 输入 <code>top 20 -cum</code> 查看前20占用资源最高的方法调用，寻找可疑函数funcX
+4. 输入 <code>traces funcX</code> 查找函数调用栈，寻找可疑的函数funxY
+5. 输入 <code>list funcY</code> 查看函数的具体位置
+
 
 # 可视化界面
 需要先安装graphviz。
