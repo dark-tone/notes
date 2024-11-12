@@ -67,7 +67,7 @@ func main() {
 4. 输入 <code>traces funcX</code> 查找函数调用栈，寻找可疑的函数funxY
 5. 输入 <code>list funcY</code> 查看函数的具体位置
 
-// 采样pprof信息并进入pprof命令行
+// 采样pprof信息并进入pprof命令行<br>
 // go tool pprof -seconds=5 http://localhost:8080/debug/pprof/profile
 
 
