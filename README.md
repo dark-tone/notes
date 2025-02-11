@@ -43,6 +43,7 @@
 - [in和join和exists](https://github.com/dark-tone/notes/tree/main/MySQL/in%E5%92%8Cjoin%E5%92%8Cexists)
 - [主从复制](https://github.com/dark-tone/notes/tree/main/MySQL/主从复制)
 - [onlineDDL](https://github.com/dark-tone/notes/tree/main/MySQL/onlineDDL)
+- [MySQL8.0新特性](https://github.com/dark-tone/notes/tree/main/MySQL/MySQL8.0特性)
 
 ### GoLang
 - [基础](https://github.com/dark-tone/notes/tree/main/Golang/基础)
