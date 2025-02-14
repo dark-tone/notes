@@ -1,7 +1,7 @@
 ## 输入网址到显示页面发生了什么
 1. 你向浏览器的地址栏输入一个域名回车，如http://www.baidu.com
 2. 发起域名解析过程，获取真实IP地址。
-    > localDNS或httpDNS
+    > 本地域名缓存、hosts文件、localDNS或httpDNS
 3. 拿到ip地址之后，发起TCP 握手(3次)。
 4. 握手成功，构造request,即 HTTP 中request请求.并发送到目的地。
     > 中间涉及局域网ARP协议获取网关MAC地址，以及路由规则，TCP流量控制及拥塞控制知识。
