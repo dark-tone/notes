@@ -94,3 +94,5 @@ poll调用实现了什么？
 [深入理解 Linux 的 epoll 机制](https://mp.weixin.qq.com/s?__biz=MzU0OTE4MzYzMw==&mid=2247515011&idx=2&sn=3812f80dd80bb27340d5849df8d1cec0&chksm=fbb1327dccc6bb6bfd5ab7f9da23220ade44e88e2f8d2506b7e0868bb84665a95f026eddb82d&scene=27)
 
 [揭开 epoll 面纱：Nginx，Redis 等都在用的多路复用，到底是什么？](https://xie.infoq.cn/article/6e0e4822754f224cd11f8ed4e)
+
+[[内核源码] epoll lt / et 模式区别](https://zhuanlan.zhihu.com/p/441677252)
