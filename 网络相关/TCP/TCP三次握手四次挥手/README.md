@@ -82,6 +82,9 @@ A收到释放请求后，向B发送确认应答，此时A进入TIME-WAIT状态�
 ### tcp_tw_reuse 和 SO_REUSEADDR
 关于tcp_tw_reuse和SO_REUSEADDR的区别，可以概括为：tcp_tw_reuse是为了缩短time_wait的时间，避免出现大量的time_wait链接而占用系统资源，解决的是accept后的问题；SO_REUSEADDR是为了解决time_wait状态带来的端口占用问题，以及支持同一个port对应多个ip，解决的是bind时的问题。
 
+tcp_tw_reuse 是内核选项，主要用在连接的发起方。TIME_WAIT 状态的连接创建时间超过 1 秒后，新的连接才可以被复用，注意，这里是连接的发起方；<br>
+SO_REUSEADDR 是用户态的选项，SO_REUSEADDR 选项用来告诉操作系统内核，如果端口已被占用，但是 TCP 连接状态位于 TIME_WAIT ，可以重用端口。如果端口忙，而 TCP 处于其他状态，重用端口时依旧得到“Address already in use”的错误信息。注意，这里一般都是连接的服务方。
+
 ###  client fooling
 client走完第三步就发送请求，但server还没有调用accept，这种情况叫client fooling。
 会发生的情况：client认为连接建立成功，但是server上这个连接实际没有ready，所以server没有回复，一段时间后client认为丢包了然后重传这个包，一直到超时，client主动发fin包断开该连接。
