@@ -48,6 +48,18 @@ while(1) {
     } 
 ```
 
+pollevent结构
+```
+struct eventpoll {
+　　...
+   // 红黑树的根节点指针, 存储着所有的事件, 你也可以理解为所有的socket连接都在红黑树中存储
+　　struct rb_root rbr;
+　　// 双向链表, 存储所有就绪的socket的连接, epoll_wait的返回值就是从这个地方读取的
+　　struct list_head rdllist;
+　　...
+};
+```
+
 ## 底层原理
 使用文件系统的 poll 机制让上层能直接告诉底层，我这个 fd 一旦读写就绪了，请底层硬件（比如网卡）回调的时候自动把这个 fd 相关的结构体放到指定队列中，并且唤醒操作系统。
 > 举个例子：网卡收发包其实走的异步流程，操作系统把数据丢到一个指定地点，网卡不断的从这个指定地点掏数据处理。请求响应通过中断回调来处理，中断一般拆分成两部分：硬中断和软中断。poll 函数就是把这个软中断回来的路上再加点料，只要读写事件触发的时候，就会立马通知到上层，采用这种事件通知的形式就能把浪费的时间窗就完全消失了。
@@ -80,3 +92,5 @@ poll调用实现了什么？
 [epoll的LT和ET](https://www.jianshu.com/p/d3442ff24ba6)
 
 [深入理解 Linux 的 epoll 机制](https://mp.weixin.qq.com/s?__biz=MzU0OTE4MzYzMw==&mid=2247515011&idx=2&sn=3812f80dd80bb27340d5849df8d1cec0&chksm=fbb1327dccc6bb6bfd5ab7f9da23220ade44e88e2f8d2506b7e0868bb84665a95f026eddb82d&scene=27)
+
+[揭开 epoll 面纱：Nginx，Redis 等都在用的多路复用，到底是什么？](https://xie.infoq.cn/article/6e0e4822754f224cd11f8ed4e)
