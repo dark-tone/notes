@@ -146,7 +146,7 @@ rehash的过程是渐进式的，防止对大字典rehash时影响正常服务�
 1. 为ht[1]分配空间
 2. rehashidx从-1设置为0，表明rehash正在进行
 3. 每次对字段执行添加、删除、查找或更新操作时，会顺带将ht[0]哈希表在rehashidx索引上的所有键值对rehash到ht[1]上，并将rehashidx + 1
-4. rehash完毕后，将rehashidx设为-1，rehash成功
+4. rehash完毕后（完毕标志：rehashidx=ht[0].size），将rehashidx设为-1，rehash成功
 
 期间字典的删除、查找、更新操作会在两表同时执行，而新增则只会保存在ht[1]里面。
 
